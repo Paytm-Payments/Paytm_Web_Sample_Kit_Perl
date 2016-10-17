@@ -80,6 +80,17 @@ sub getChecksumFromArray{
 	return $checksum;
 }
 
+sub getChecksumFromStr{
+	my ($key, $str) = @_;
+	$salt= generateSalt_e(4);
+	$finalString = $str . "|" . $salt;	
+    $hash = sha256_hex($finalString);
+	$hashString  = $hash . $salt;
+    $checksum    = encrypt_e($hashString, $key);
+	
+	return $checksum;
+}
+
 sub verifychecksum_e{
 	my ($key, $checksumvalue,%arrayList) = @_;
 	%arrayList = removeCheckSumParam(%arrayList);
