@@ -57,7 +57,6 @@ sub generateSalt_e{
 
 sub checkString_e{
 	my $value = shift;
-	$value =~ s/^\s+|\s+$//g;  
   if ($value eq 'null'){
     $value = '';
 	}
