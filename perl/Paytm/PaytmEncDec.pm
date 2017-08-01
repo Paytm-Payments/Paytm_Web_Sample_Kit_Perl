@@ -76,6 +76,7 @@ sub getChecksumFromArray{
 		$hashString  = $hash . $salt;
     $checksum    = encrypt_e($hashString, $key);
 	} 
+	$checksum =~ s/[\n\r]//g;
 	return $checksum;
 }
 
