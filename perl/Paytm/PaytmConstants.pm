@@ -8,9 +8,9 @@ use constant CHANNEL_ID    => 'WEB';
 
 
 if (ENVIRONMENT eq "P"){
-  $paytm_pg_url = 'https://secure.paytm.in/oltp-web/processTransaction';
+	$paytm_pg_url = 'https://securegw.paytm.in/theia/processTransaction';
 }else{
-	$paytm_pg_url = 'https://pguat.paytm.com/oltp-web/processTransaction';
+	$paytm_pg_url = 'https://securegw-stage.paytm.in/theia/processTransaction';
 }
 
 
